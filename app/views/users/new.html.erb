@@ -1,0 +1,31 @@
+
+<h2>Sign up!</h2>
+<div class="container text-center">
+  <div class="form">
+   <%= form_for(@user) do |f| %>
+    <div class= "field">
+      <%= f.label "First Name" %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class= "field">
+      <%= f.label "Last Name" %>
+      <%= f.text_field :last_name %>
+    </div>
+      <%= f.label "Email" %>
+      <%= f.email_field :email%>
+    <div class= "field">
+      <%= f.label "Password" %>
+      <%= f.password_field :password%>
+    </div>
+    <div class= "field"> 
+     <%= f.label "Zip Code" %>
+      <%= f.text_field :zip%>
+    </div>
+    <div class= "field">
+      <%= f.label "Birthday" %>
+      <%= f.date_field :birthday %>
+    </div>
+      <%= f.submit "Create an account", class: "btn btn-success" %>
+    <% end %>
+  </div> 
+</div>
