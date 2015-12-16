@@ -51,16 +51,21 @@
       <ul class="nav navbar-nav navbar-right">
        <% if current_user %>
          <li><%= current_user.first_name %></li>
-         <li><%= link_to 'Profile', profile_path %></li>
+         <li><%= link_to 'Profile', user_path(current_user) %></li>
          <li><%= link_to 'Logout', logout_path, method:"delete" %></li>
          <%else%>
-       <li><%= link_to 'Login', new_session_path %> </li>
+       <li><%= link_to 'Login', login_path %> </li>
        <li><%= link_to 'Signup', signup_path %> </li>
        <% end %>
        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+   <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+   <% elsif flash[:alert]%>
+     <div class="alert"><%= flash[:alert] %></div>
+   <% end %>
 <%= yield %>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 </body>

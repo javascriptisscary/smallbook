@@ -1,0 +1,12 @@
+<div class="container text-center">
+ <h1>User#SHOW</h1>
+<%= image_tag @user.avatar.url(:large) %>
+
+</div>
+<div class="container text-center">
+  <h1>Profile Photo</h1>
+  <%= form_for @user,  html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit 'Submit Image', class: "btn" %>
+<% end %>
+</div>
