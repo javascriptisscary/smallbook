@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   get 'profile', to: 'users#show'
-  post 'profile', to: 'users#update'
+  get 'edit', to: 'users#edit'
+  post 'edit', to: 'users#update'
   get 'signup', to: 'users#new'
   
   

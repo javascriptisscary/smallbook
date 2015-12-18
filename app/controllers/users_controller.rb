@@ -22,8 +22,13 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(current_user.id)
-   
+   puts "user id info equals #{@user.first_name}"
   end
+  
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
   
   def update
      @user = User.find(params[:id])

@@ -1,12 +1,42 @@
+<h1 class="text-center">Kenny Gould</h1>
 <div class="container text-center">
- <h1>User#SHOW</h1>
-<%= image_tag @user.avatar.url(:large) %>
-
-</div>
-<div class="container text-center">
-  <h1>Profile Photo</h1>
-  <%= form_for @user,  html: { multipart: true } do |form| %>
-  <%= form.file_field :avatar %>
-  <%= form.submit 'Submit Image', class: "btn" %>
-<% end %>
+ <div class="row">
+  <div class="col-md-4">
+    <h3>Profile Photo</h3>
+    <div id="photo">
+     <%= link_to edit_path(current_user) do %>
+      <%= image_tag @user.avatar.url(:medium), class:"img-responsive img-center profile-image" %>
+     <%end%>
+      <i class="fa fa-camera" id="camera"></i>
+    </div>
+    <table class="table">
+     <tr>
+       <td>Name:</td>
+       <td><%="#{@user.first_name} #{@user.last_name}"%></td>
+     </tr>
+     <tr>  
+       <td>Age:</td>
+       <td><%=get_age(@user.birthday)%></td>
+     </tr>
+     <tr>
+       <td>Email:</td>
+       <td><%=@user.email%></td>
+     </tr>
+      <tr>
+       <td>WebPage:</td>
+       <td><%=@user.webpage%></td>
+     </tr>
+     <tr>
+       <td>Location:</td>
+       <td><%=@user.zip%></td>
+     </tr>
+    </table>
+  </div>
+  <div class="col-md-8">
+   <div class="wall-contain">
+     <h2>Messages and such will be here</h2>
+   </div>
+   
+  </div>
+ </div>
 </div>

@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
+  has_many :friends
+
+
+
 end

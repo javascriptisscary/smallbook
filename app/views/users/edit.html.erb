@@ -1,0 +1,11 @@
+<h1> Edit User</h1>
+<div class="container">
+<%= image_tag @user.avatar.url(:medium), class:"img-responsive" %>
+   
+
+    
+    <%= form_for @user,  html: { multipart: true } do |form| %>
+      <%= form.file_field :avatar %>
+      <%= form.submit 'Submit Image', class: "btn" %>
+    <% end %>
+    </div>
