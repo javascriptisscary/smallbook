@@ -1,0 +1,12 @@
+<h1>Users List</h1>
+
+<div class="container">
+  <% for user in @users %>
+    <p>
+      <% next if user.id ==current_user.id %>
+      <%= user.first_name + " " + user.last_name %>
+      <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
+    </p>
+  <% end %>
+
+</div>

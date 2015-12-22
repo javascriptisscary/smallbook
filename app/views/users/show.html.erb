@@ -1,10 +1,10 @@
-<h1 class="text-center">Kenny Gould</h1>
+<h1 class="text-center"><%= "#{@user.first_name} #{@user.last_name}"%></h1>
 <div class="container text-center">
  <div class="row">
   <div class="col-md-4">
     <h3>Profile Photo</h3>
     <div id="photo">
-     <%= link_to edit_path(current_user) do %>
+     <%= link_to edit_user_path(current_user) do %>
       <%= image_tag @user.avatar.url(:medium), class:"img-responsive img-center profile-image" %>
      <%end%>
       <i class="fa fa-camera" id="camera"></i>
@@ -16,27 +16,37 @@
      </tr>
      <tr>  
        <td>Age:</td>
-       <td><%=get_age(@user.birthday)%></td>
+       <td><%= get_age(@user.birthday)%> </td>
      </tr>
      <tr>
        <td>Email:</td>
        <td><%=@user.email%></td>
      </tr>
-      <tr>
-       <td>WebPage:</td>
-       <td><%=@user.webpage%></td>
+     <% if @user.webpage %>
+     <tr>
+       <td>Website:</td>
+       <td><%=link_to(@user.webpage)%></td>
      </tr>
+     <% end%>
      <tr>
        <td>Location:</td>
        <td><%=@user.zip%></td>
      </tr>
     </table>
+    <h3>Friends</h3>
+    
+      <% for friendship in @user.friendships %>
+       <%= image_tag friendship.friend.avatar.url(:thumb) %>
+           
+       
+      <% end %>
+    
+    <p> <%= link_to "Find more friends",  index_path %></p>
   </div>
   <div class="col-md-8">
    <div class="wall-contain">
      <h2>Messages and such will be here</h2>
    </div>
-   
   </div>
  </div>
 </div>
