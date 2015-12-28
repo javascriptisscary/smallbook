@@ -22,16 +22,16 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", "~> 4.3"
 
-
+gem 'pg'
 
 group :production do
-  gem 'pg'
+  
   gem 'rails_12factor'
 end
 
 group :development, :test do
   gem 'byebug'
-  gem 'sqlite3'
+  gem 'hirb'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end

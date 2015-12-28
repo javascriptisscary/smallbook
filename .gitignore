@@ -16,7 +16,10 @@
 !/log/.keep
 /tmp
 
-#ignore images
-*.jpg
-*.png
-*.gif
+#ignore images from users on localhost
+**/system/
+
+
+#ignore database.yml
+/config/database.yml
+

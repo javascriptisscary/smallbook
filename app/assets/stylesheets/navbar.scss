@@ -1,7 +1,51 @@
 .navbar-inverse {
-    border-bottom:1px solid black;
+    padding-top: 0;
+    padding-bottom:0;
+    border-radius: 0;
     background-color: #3A5795;
-   -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
-   -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.75);
+   -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+.thumb {
+   margin-right: 5px;
+}
+
+
+#name a {
+    color:white;
+    margin-right:30%;
+    text-shadow: 0px -1px gray;
+    border: 1px solid transparent;
+    
+    
+}
+
+#name a:hover{
+    -webkit-transition: all .3s ease;
+     -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    background-color: #b9d1ff;
+    border: 1px solid black;
+}
+
+
+#logout{
+    color:black;
+  
+    
+    
+}
+
+#logout:hover{
+    -webkit-transition: all .3s ease;
+     -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    color:white;
+}
+
+.nav > li > a {
+    padding-bottom: 15px;
+    padding-top:15px;
 }

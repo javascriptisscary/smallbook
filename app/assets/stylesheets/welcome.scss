@@ -1,3 +1,44 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img-center{
+    margin:auto auto;
+}
+
+
+
+.form-control {
+   font-size: 18px;
+   color:black;
+   
+}
+
+
+ ::-webkit-input-placeholder {
+   font-size: 18px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size: 18px;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 18px;
+}
+
+:-ms-input-placeholder {  
+   font-size: 18px;
+}
+
+
+#nameform {
+    padding: 6px 0;
+    
+
+}
+
+.form-inline {
+    margin-bottom:15px;
+}
+

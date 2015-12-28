@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'edit', to: 'users#update'
   get 'signup', to: 'users#new'
   
+  #post posts from profile
+  post 'profile', to: 'posts#create'
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   resources :users
   
   resources :friendships
-  
+  resources :posts
   
   
   # The priority is based upon order of creation: first created -> highest priority.

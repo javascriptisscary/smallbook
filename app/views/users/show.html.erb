@@ -1,15 +1,21 @@
-<h1 class="text-center"><%= "#{@user.first_name} #{@user.last_name}"%></h1>
-<div class="container text-center">
+<h1 class="text-center"><%= @user.full_name%></h1>
+<div class="container">
  <div class="row">
-  <div class="col-md-4">
-    <h3>Profile Photo</h3>
+  <div class="col-xs-4">
+    
     <div id="photo">
-     <%= link_to edit_user_path(current_user) do %>
-      <%= image_tag @user.avatar.url(:medium), class:"img-responsive img-center profile-image" %>
-     <%end%>
+     <% puts "here is the current user id #{current_user.id} and the @user.id is #{@user.id}"  %>
+     <% if current_user.id != @user.id %>
+      <%= image_tag @user.avatar.url(:medium), class:"img-responsive profile-image" %>
+     <% else %>
+       <%= link_to edit_user_path(current_user) do %>
+         <%= image_tag @user.avatar.url(:medium), class:"img-responsive profile-image" %>
+       <% end%>
+     <% end%>
       <i class="fa fa-camera" id="camera"></i>
     </div>
     <table class="table">
+     <th><i class="fa fa-info-circle fa-2x"></i></th>
      <tr>
        <td>Name:</td>
        <td><%="#{@user.first_name} #{@user.last_name}"%></td>
@@ -27,25 +33,52 @@
        <td>Website:</td>
        <td><%=link_to(@user.webpage)%></td>
      </tr>
-     <% end%>
+     <% end %>
+     <% if @user.zip %>
      <tr>
        <td>Location:</td>
        <td><%=@user.zip%></td>
      </tr>
+     <% end %>
     </table>
-    <h3>Friends</h3>
-    
-      <% for friendship in @user.friendships %>
-       <%= image_tag friendship.friend.avatar.url(:thumb) %>
-           
-       
-      <% end %>
-    
-    <p> <%= link_to "Find more friends",  index_path %></p>
+    <h3> <i class="fa fa-users"></i> Friends <span id="friend-count">&middot; <%=@user.friendships.count%> </span></h3> 
+    <% for friendship in @user.friendships x=1 %>
+     <%= link_to user_path(friendship.friend.id) do %>
+      <%= image_tag friendship.friend.avatar.url(:friend) %>
+     <%end%>
+      <span class="name<%=x%>"> <%= friendship.friend.first_name + " " + friendship.friend.last_name %></span>
+     <% x=x+1 %>
+     <% if x ==4 %>
+      <%break%>
+      
+     <% end %>
+    <% end %>
+    <p class="find-more"> <%= link_to "Find more friends", index_path %></p>
   </div>
-  <div class="col-md-8">
-   <div class="wall-contain">
-     <h2>Messages and such will be here</h2>
+  <div class="col-xs-8">
+   <div class="text-center">
+    
+     <%= form_for @post do |p| %>
+       <div class="form-group">
+         <%=p.text_area(:content, cols:50, rows:3, class:"post", placeholder: "Whats on your mind?") %>
+       </div>
+       <div class="form-group">
+         <%=p.submit "Post", class: "btn btn-primary" %>
+       </div>
+      <% end %>
+      <%@user.posts.each do |post| %>
+      <div class="wall-contain">
+        <%= link_to edit_user_path(current_user) do %>
+            <%= image_tag @user.avatar.url(:status), class: "status-image" %>
+          <% end%>
+          <div class="status text-left">
+          <h4 class="status-name"><%=link_to @user.full_name, user_path(@user.id)%></h4>
+          <p class="datetime"><%=post.created_at%></p>
+        </div>
+        <p class="post-content text-left"><%=post.content%></p>
+      </div>
+      <% end %>
+      
    </div>
   </div>
  </div>

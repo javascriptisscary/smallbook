@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_filter :require_user, only: [:index, :show, :edit, :update]
+before_filter :edit_profile, only: [:edit, :update]
 
 
   def index
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] ="User Successfully Created!"
-      redirect_to profile_path
+      redirect_to @user
     else
       flash[:alert] ="User not created"
       redirect_to signup_path
@@ -29,12 +31,19 @@ class UsersController < ApplicationController
   
   
   def show
-    @user = User.find(current_user.id)
+  
+   @user = User.find(params[:id])
+   
+   @post = Post.new
    
   end
   
+
+  
+
+  
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
   end
   
   

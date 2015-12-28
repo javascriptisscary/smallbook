@@ -4,25 +4,68 @@
 
 .profile-image {
     border:1px solid black;
+    
 }
 
 
 
+#friend-count {
+    font-size: .7em;
+    color:gray;
+}
 
 #camera {
  position: relative;
- left:-25%;
+ left: 6px;
  bottom:30px;
  font-size:2em;
- color: 255.250.250.05;
+ color: rgba(255,255,255,0.7);
 }
 
-.img-center{
-    margin: auto;
+
+
+
+
+/* names on friends' profile pics */
+
+.name1 {
+    position: absolute;
+    left:18px;
+    bottom:40px;
+    color:white;
+    font-size: .9em;
 }
 
-.wall-contain {
-    background-color: white;
-    border: 1px solid black;
+.name2 {
+    position: absolute;
+    left: 122px;
+    bottom:40px;
+    color:white;
+    font-size: .9em;
 }
 
+.name3 {
+    position: absolute;
+    left: 226px;
+    bottom:40px;
+    color:white;
+    font-size: .9em;
+}
+
+
+.find-more {
+    margin-top:3%;
+}
+
+
+
+/* font awesome icons */
+
+.fa-info-circle {
+color: blue;    
+}
+
+
+.fa-users{
+    color:red;
+}

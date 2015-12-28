@@ -1,3 +1,45 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<i class="fa fa-camera"></i>
+<div class="container">
+  <% if current_user %>
+    <h1>Welcome to Small Book</h1>
+    <p>The facebook clone made in ruby on rails.</p>
+    <%= image_tag "frontpagelogo.jpg", class: "img-responsive" %>
+    <p>Made by <%= link_to 'Kenneth Gould', "http://www.javascriptisscary.com" %> </p>
+  </div>
+  <% else %>
+  <div class="col-md-7 col-xs-12">
+    <h1>Welcome to Small Book</h1>
+    <p>The facebook clone made in ruby on rails.</p>
+    <%= image_tag "frontpagelogo.jpg", class: "img-responsive" %>
+    <p>Made by <%= link_to 'Kenneth Gould', "http://www.javascriptisscary.com" %> </p>
+  </div>
+  <div class="col-md-5 col-xs-12">
+    <h2>Sign Up</h2>
+    <h4>It's free and always will be.</h4>
+    <div class="form">
+      <%= form_for(@user) do |f| %>
+        <div class="form-inline">
+          <div class= "field form-group" id="nameform">
+            <%= f.text_field :first_name , class: "form-control input-lg", placeholder: "First Name"%>
+          </div>
+          <div class= "field form-group" id="nameform">
+            <%= f.text_field :last_name, class: "form-control input-lg", placeholder: "Last Name" %>
+          </div>
+        </div>
+          
+        <div class= "field form-group">
+          <%= f.email_field :email, class: "form-control input-lg", placeholder: "Email Address"%>
+        </div>
+        <div class= "field form-group">
+          <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password"%>
+        </div>
+        <div class="field form-group">
+          <%= f.date_field :birthday, class:"form-control input-lg", placeholder: "Date of Birth mm-dd-yyyy" %>
+        </div>
+        <div class= "form-group">
+          <%= f.submit "Create an account", class: "btn btn-success" %>
+    
+        </div>
+     <% end %>
+  </div>
+</div>
+  <% end %>
