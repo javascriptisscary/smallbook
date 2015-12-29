@@ -24,6 +24,8 @@ gem "paperclip", "~> 4.3"
 
 gem 'pg'
 
+gem 'jquery-ui-rails'
+
 group :production do
   
   gem 'rails_12factor'
