@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :first_name, :last_name, length: {minimum: 2} 
   validates :first_name, :last_name, length: {maximum: 15}
+  validates :password, length: {minimum: 8}
   
   #validate associations
   validates_associated :friendships
@@ -28,6 +29,20 @@ class User < ActiveRecord::Base
   def full_name
     self.first_name + " " + self.last_name
   end
+ 
+ 
+  def friends?(id)
+    self.friendships.each do |friendship|
+      if friendship.friend_id == id
+        return true
+      end
+    end
+    return false
+    
+  end
+    
+  
+
  
 
 end

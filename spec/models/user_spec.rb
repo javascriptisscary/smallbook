@@ -32,18 +32,40 @@ describe User do
  
  
   #user methods
-  context "when first and last name are present" do
+  
+ # context "when calling existing friends?" do
+  #  it "will return true" do
+   #   @user.
+          
+  
+  
+  
+  
+  context "when we call self.full_name" do
     
     
     
-      it "returns first and last" do
+      it " will return first and last name" do
         expect(@user.full_name).to eq "John Puppy"
       
       end
     end
   
-    
   
+  
+  
+  
+    
+  #password
+  it { should have_secure_password }
+  
+  
+  context "when password is less than 8 characters" do
+    it "will not validate" do
+      less_8 = build(:user, password: "happy12")
+      expect(less_8).to_not be_valid
+    end
+  end
     
     
     

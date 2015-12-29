@@ -8,10 +8,16 @@ FactoryGirl.define do
     zip "86578"
     birthday "10-05-1950"
     webpage "http://www.google.com"
-    password "doggie"
+    password "12345678"
+      
     
-    
+   # after(:create) do |user|
+    #user.friends << FactoryGirl.create(:friend)
+    #end
+
+
+
   end
     
-  
+    
 end
