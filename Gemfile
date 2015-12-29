@@ -31,9 +31,15 @@ end
 
 group :development, :test do
   gem 'byebug'
+  
   gem 'hirb'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'guard-rspec', require: false
 end
+
+
 
 ruby "2.2.2"
