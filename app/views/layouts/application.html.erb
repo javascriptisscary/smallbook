@@ -38,9 +38,19 @@
           <% end%>
           </li>
          <li><%= link_to(content_tag(:i, nil, class: "fa fa-sign-out fa-2x", id: "logout"),  logout_path, method: "delete") %></li>
+         
          <%else%>
-       <li><%= link_to 'Login', login_path %> </li>
-       <li><%= link_to 'Signup', signup_path %> </li>
+        <%= form_for :session, url: login_path do |f| %>
+      <div class="form-inline" id="sessions-form">
+        <div class="form-group" >
+          <%= f.email_field :email, class: "form-control form-half", id: "sessions", placeholder: "Email" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, class: "form-control form-half", id: "sessions", placeholder: "Password"%>
+        </div>
+        
+          <%= f.submit "Log in", class: "btn btn-primary" %>    
+          <% end %>
        <% end %>
        </ul>
     </div><!-- /.navbar-collapse -->

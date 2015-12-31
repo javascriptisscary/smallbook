@@ -9,7 +9,7 @@
 
 
 .form-control {
-   font-size: 18px;
+   font-size: 16px;
    color:black;
    
 }
@@ -35,10 +35,43 @@
 #nameform {
     padding: 6px 0;
     
+    display: inline-block;
+    width: auto;
+}
+
+
+#sessions {
+    font-size: 14px;
+    height: 28px;
+}
+
+#sessions-form {
+    margin-top:10px;
+    padding-right:15px;
+    
+    
+    
+    /*for placeholders inside of sessions form */
+    
+     ::-webkit-input-placeholder {
+   font-size: 14px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size: 14px;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 14px;
+}
+
+:-ms-input-placeholder {  
+   font-size: 14px;
+}
 
 }
 
-.form-inline {
-    margin-bottom:15px;
+.sign-up {
+    margin-top: 5%;
+    font-size: 1.5em;
 }
-

@@ -13,7 +13,7 @@
     <p>Made by <%= link_to 'Kenneth Gould', "http://www.javascriptisscary.com" %> </p>
   </div>
   <div class="col-md-5 col-xs-12">
-    <h2>Sign Up</h2>
+    <h2><strong>Sign Up</strong></h2>
     <h4>It's free and always will be.</h4>
     <div class="form">
       <%= form_for(@user) do |f| %>
@@ -35,11 +35,12 @@
         <div class="field form-group">
           <%= f.date_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth" %>
         </div>
-        <div class= "form-group">
-          <%= f.submit "Create an account", class: "btn btn-success" %>
+        <div class= "form-group text-center">
+          <%= f.submit "Create an account", class: "btn btn-success sign-up" %>
     
         </div>
-     <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
   <% end %>

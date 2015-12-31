@@ -7,7 +7,7 @@ $(document).on('ready page:load', function () {
 
 
   //datepicker for adding birthday
-  $( "#datepicker" ).datepicker({ changeYear:true, yearRange: "1940:2005", format: 'mm/dd/yyyy',  defaultDate: "01/01/1984"});
+  $( "#datepicker" ).datepicker({ changeMonth: true, changeYear:true, yearRange: "1940:2005", format: 'mm/dd/yyyy',  defaultDate: "01/01/1984"});
 
   
 

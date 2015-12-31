@@ -33,7 +33,7 @@ end
 
 group :development, :test do
   gem 'byebug'
-  
+  gem 'capybara'
   gem 'hirb'
   gem 'web-console', '~> 2.0'
   gem 'spring'
