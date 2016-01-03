@@ -1,6 +1,6 @@
 <h1 class="text-center"><%= @user.full_name%></h1>
 <div class="container">
- <div class="row">
+ 
   <div class="col-xs-4">
     
     <div id="photo">
@@ -11,7 +11,7 @@
        <%= link_to edit_user_path(current_user) do %>
          <%= image_tag @user.avatar.url(:medium), class:"img-responsive profile-image" %>
        <% end%>
-      <% end%>
+     <% end%>
       <i class="fa fa-camera" id="camera"></i>
     </div>
     <table class="table">
@@ -42,17 +42,22 @@
      <% end %>
     </table>
     <h3> <i class="fa fa-users"></i> Friends <span id="friend-count">&middot; <%=@user.friendships.count%> </span></h3> 
+    <div>
     <% for friendship in @user.friendships x=1 %>
+    <div class="friend">
      <%= link_to user_path(friendship.friend.id) do %>
-      <%= image_tag friendship.friend.avatar.url(:friend) %>
+      <%= image_tag friendship.friend.avatar.url(:friend)%>
+      
      <%end%>
       <span class="name<%=x%>"> <%= friendship.friend.first_name + " " + friendship.friend.last_name %></span>
+     </div>
      <% x=x+1 %>
      <% if x ==4 %>
       <%break%>
       
      <% end %>
     <% end %>
+    </div>
     <p class="find-more"> <%= link_to "Find more friends", index_path %></p>
   </div>
   <div class="col-xs-8">

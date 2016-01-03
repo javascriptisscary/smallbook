@@ -29,25 +29,25 @@
 /* names on friends' profile pics */
 
 .name1 {
-    position: absolute;
-    left:18px;
-    bottom:40px;
+    position: relative;
+    left:5px;
+    bottom:20px;
     color:white;
     font-size: .9em;
 }
 
 .name2 {
-    position: absolute;
-    left: 122px;
-    bottom:40px;
+    position: relative;
+    left:5px;
+    bottom:20px;
     color:white;
     font-size: .9em;
 }
 
 .name3 {
-    position: absolute;
-    left: 226px;
-    bottom:40px;
+    position: relative;
+    left:5px;
+    bottom:20px;
     color:white;
     font-size: .9em;
 }
@@ -55,6 +55,7 @@
 
 .find-more {
     margin-top:3%;
+    clear:both;
 }
 
 
@@ -68,4 +69,13 @@ color: blue;
 
 .fa-users{
     color:red;
+}
+
+.friend{
+    width:100px;
+    height:100px;
+    clear:none;
+    float:left;
+    margin:3px;
+    
 }

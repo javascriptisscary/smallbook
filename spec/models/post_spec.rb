@@ -2,9 +2,13 @@ require 'rails_helper'
 
 describe User do
   
-  it "can manange posts he owns" do
-    post = create(:post)
-    user = post.user
-    user.can_manage_post?(post).should be_true
-  end
+  context "when user posts a post"
+    it "will post correctly" do
+      post = create(:post)
+      user = post.user
+      post.content = "FooBar"
+    end
+    
+    
+    
 end
