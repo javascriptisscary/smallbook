@@ -59,6 +59,16 @@
 }
 
 
+.friend{
+    width:100px;
+    height:100px;
+    clear:none;
+    float:left;
+    margin:3px;
+    
+}
+
+
 
 /* font awesome icons */
 
@@ -71,11 +81,6 @@ color: blue;
     color:red;
 }
 
-.friend{
-    width:100px;
-    height:100px;
-    clear:none;
-    float:left;
-    margin:3px;
-    
+#delete-post {
+    float:right;
 }
