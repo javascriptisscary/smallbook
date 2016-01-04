@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #post posts from profile
   post 'profile', to: 'posts#create'
   
+
+  
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   
   resources :friendships
   resources :posts
-  
+  resources :friends
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

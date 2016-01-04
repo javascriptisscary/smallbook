@@ -1,0 +1,80 @@
+
+<div class="container">
+ 
+  <div class="col-xs-4">
+    
+    <div id="photo">
+     <% puts "here is the current user id #{current_user.id} and the @profile.id is #{@profile.id}"  %>
+     <% if current_user.id != @profile.id %>
+      <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
+     <% else %>
+       <%= link_to edit_user_path(current_user) do %>
+         <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
+       <% end%>
+     <% end%>
+      <i class="fa fa-camera" id="camera"></i>
+    </div>
+    <table class="table">
+     <th><i class="fa fa-info-circle fa-2x"></i></th>
+     <tr>
+       <td>Name:</td>
+       <td><%="#{@profile.first_name} #{@profile.last_name}"%></td>
+     </tr>
+     <tr>  
+       <td>Age:</td>
+       <td><%= get_age(@profile.birthday)%> </td>
+     </tr>
+     <tr>
+       <td>Email:</td>
+       <td><%=@profile.email%></td>
+     </tr>
+     <% if @profile.webpage %>
+     <tr>
+       <td>Website:</td>
+       <td><%=link_to(@profile.webpage)%></td>
+     </tr>
+     <% end %>
+     <% if @profile.zip %>
+     <tr>
+       <td>Location:</td>
+       <td><%=@profile.zip%></td>
+     </tr>
+     <% end %>
+    </table>
+    <h3> <i class="fa fa-users"></i> Friends <span id="friend-count">&middot; <%=@profile.friendships.count%> </span></h3> 
+    <div>
+    <% for friendship in @profile.friendships x=1 %>
+    <div class="friend">
+     <%= link_to user_path(friendship.friend.id) do %>
+      <%= image_tag friendship.friend.avatar.url(:friend)%>
+      
+     <%end%>
+      <span class="name<%=x%>"> <%= friendship.friend.first_name + " " + friendship.friend.last_name %></span>
+     </div>
+     <% x=x+1 %>
+     <% if x ==4 %>
+      <%break%>
+      
+     <% end %>
+    <% end %>
+    </div>
+    <p class="find-more"> <%= link_to "Find more friends", index_path %></p>
+  </div>
+  <div class="col-xs-8">
+   <div class="text-center">
+    
+     <%= form_for @post do |p| %>
+       <%=p.hidden_field :profile_id, value: current_user.id%> 
+       <div class="form-group">
+         <%=p.text_area(:content, cols:50, rows:3, class:"post", placeholder: "Whats on your mind?") %>
+       </div>
+       <div class="form-group">
+         <%=p.submit "Post", class: "btn btn-primary" %>
+       </div>
+      <% end %>
+      <%= render 'posts/list_posts' %>
+      
+   </div>
+  </div>
+ </div>
+</div>

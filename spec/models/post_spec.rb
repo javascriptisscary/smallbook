@@ -3,12 +3,24 @@ require 'rails_helper'
 describe User do
   
   context "when user posts a post"
-    it "will post correctly" do
+      
+      
+    
+    it "content will be correct" do
       post = create(:post)
       user = post.user
-      post.content = "FooBar"
+   
+    expect(post.content).to eq "FooBar"
+   
+      
     end
     
-    
+    it "username will be correct" do
+       post = create(:post)
+       user = post.user
+       
+      expect(user.last_name).to eq "Puppy"
+      expect(user.first_name).to eq "John"
+    end
     
 end

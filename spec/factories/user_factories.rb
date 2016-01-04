@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     first_name "John"
     last_name  "Puppy"
-    sequence(:email) { |n| "#{n}johnpuppy@example.com"}
+    sequence(:email) { |n| "#{n}johnpuppy@myemail.com"}
     zip "86578"
     birthday "10-05-1950"
     webpage "http://www.google.com"
@@ -15,6 +15,7 @@ FactoryGirl.define do
     
   factory :post do
     content "FooBar"
+    profile_id 100
     user
     
   end  

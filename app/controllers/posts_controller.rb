@@ -4,8 +4,12 @@ class PostsController < ApplicationController
   
  
   def create
+    puts  "hi i'm your posts params #{post_params} mother fucker"
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    
+    #we're going to have to check that the hidden field id is an actually a friend of the user, since hidden field
+    #can be abused with JS
     
     if @post.save
       
@@ -37,7 +41,7 @@ class PostsController < ApplicationController
   
   
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content, :profile_id)
     end
 
 

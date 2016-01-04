@@ -1,14 +1,16 @@
-<%@user.posts.each do |post| %>
+<%@profile.posts.each do |post| %>
       <div class="wall-contain">
         <%= link_to edit_user_path(current_user) do %>
-            <%= image_tag @user.avatar.url(:status), class: "status-image" %>
+            <%= image_tag @profile.avatar.url(:status), class: "status-image" %>
           <% end%>
           <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }  %>
           <div class="status text-left">
-           <h4 class="status-name"><%=link_to @user.full_name, user_path(@user.id)%></h4>
+           <h4 class="status-name"><%=link_to @profile.full_name, user_path(@profile.id)%></h4>
           <p class="datetime"><%=post.created_at%></p>
           </div>
         <p class="post-content text-left"><%=post.content%></p>
       </div>
     <% end %>
+    
+    
     

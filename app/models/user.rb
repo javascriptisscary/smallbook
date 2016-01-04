@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :first_name, :last_name, length: {minimum: 2} 
   validates :first_name, :last_name, length: {maximum: 15}
-  validates :password, length: {minimum: 8}
+  validates :password, length: {minimum: 8},  on: :create
+  validates :zip, length: { is: 5}, numericality: { only_integer:true } 
   
   #validate associations
   validates_associated :friendships

@@ -32,7 +32,7 @@ before_filter :edit_profile, only: [:edit, :update]
   
   def show
   
-   @user = User.find(params[:id])
+   @profile = User.find(params[:id])
    
    @post = Post.new
    
@@ -48,9 +48,9 @@ before_filter :edit_profile, only: [:edit, :update]
   
   
   def update
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
      
-     respond_to do |format|
+    respond_to do |format|
       if @user.update(user_params)
         format.html {redirect_to @user, notice: "User successfully updated."}
       else
