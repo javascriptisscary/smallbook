@@ -6,7 +6,7 @@ module UsersHelper
   
     #first grab all posts matching profile.id from user and from friends
     for post in profile.posts do
-      if post.profile_id == current_user.id
+      if post.profile_id == profile.id
       posts.push(post)
       end
     end
@@ -14,7 +14,7 @@ module UsersHelper
     for friendship in friendships do
       for post in friendship.friend.posts do
         
-        if post.profile_id ==current_user.id
+        if post.profile_id ==profile.id
           posts.push(post)
         end
       end

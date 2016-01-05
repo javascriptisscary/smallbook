@@ -50,7 +50,7 @@
       <%= image_tag friendship.friend.avatar.url(:friend)%>
       
      <%end%>
-      <span class="name<%=x%>"> <%= friendship.friend.first_name + " " + friendship.friend.last_name %></span>
+      <span class="name<%=x%>"> <%= friendship.friend.full_name %></span>
      </div>
      <% x=x+1 %>
      <% if x ==4 %>
@@ -73,7 +73,7 @@
          <%=p.submit "Post", class: "btn btn-primary" %>
        </div>
       <% end %>
-      <%= render 'posts/list_posts' %>
+      <%= render 'posts/list_posts_profile' %>
       
    </div>
   </div>

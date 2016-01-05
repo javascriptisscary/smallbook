@@ -48,7 +48,7 @@
       <%= image_tag friendship.friend.avatar.url(:friend)%>
       
      <%end%>
-      <span class="name<%=x%>"> <%= friendship.friend.first_name + " " + friendship.friend.last_name %></span>
+      <span class="name<%=x%>"> <%= friendship.friend.full_name %></span>
      </div>
      <% x=x+1 %>
      <% if x ==4 %>
@@ -65,13 +65,13 @@
      <%= form_for @post do |p| %>
        <%=p.hidden_field :profile_id, value: @profile.id%> 
        <div class="form-group">
-         <%=p.text_area(:content, cols:50, rows:3, class:"post", placeholder: "Whats on your mind?") %>
+         <%=p.text_area(:content, cols:50, rows:3, class:"post", placeholder: "What would you like to say to #{@profile.first_name}?") %>
        </div>
        <div class="form-group">
          <%=p.submit "Post", class: "btn btn-primary" %>
        </div>
       <% end %>
-      <%= render 'posts/list_posts' %>
+      <%= render 'posts/list_posts_friend' %>
       
    </div>
   </div>
