@@ -35,6 +35,8 @@ before_filter :edit_profile, only: [:edit, :update]
    @profile = User.find(params[:id])
    
    @post = Post.new
+   @friendships = @profile.friendships
+   puts "here's the friends posts #{@friends}"
    
   end
   

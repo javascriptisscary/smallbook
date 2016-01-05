@@ -1,11 +1,24 @@
-<%@profile.posts.each do |post| %>
+<%all_posts = group_posts(@friendships, @profile) %>
+
+<%all_posts.each do |post| %>
       <div class="wall-contain">
-        <%= link_to edit_user_path(current_user) do %>
+        <%if post.user_id == current_user.id%>
+          <%= link_to edit_user_path(current_user) do %>
             <%= image_tag @profile.avatar.url(:status), class: "status-image" %>
-          <% end%>
-          <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }  %>
-          <div class="status text-left">
-           <h4 class="status-name"><%=link_to @profile.full_name, user_path(@profile.id)%></h4>
+            <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }  %>
+           <div class="status text-left">
+             <h4 class="status-name"><%=link_to @profile.full_name, user_path(post.user_id)%></h4>
+          <%end%>
+        <%else %>
+          <%friendship = find_friends(@friendships, post.user_id)%>
+          <%= link_to user_path(post.user_id) do %>
+            <%= image_tag friendship.friend.avatar.url(:status), class: "status-image" %>
+           <div class="status text-left">
+             <h4 class="status-name"><%=link_to friendship.friend.full_name, user_path(post.user_id)%></h4>
+           <%end%>
+        <%end%>
+          
+          
           <p class="datetime"><%=post.created_at%></p>
           </div>
         <p class="post-content text-left"><%=post.content%></p>
