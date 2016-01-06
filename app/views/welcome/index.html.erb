@@ -16,7 +16,18 @@
     <h2><strong>Sign Up</strong></h2>
     <h4>It's free and always will be.</h4>
     <div class="form">
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(@user.errors.count, "error") %> prohibited your user profile from being saved:</h3>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+         <% end %>
+        </ul>
+      </div>
+      <% end %>
       <%= form_for(@user) do |f| %>
+        
         <div class="form-inline">
           <div class= "field form-group" id="nameform">
             <%= f.text_field :first_name , class: "form-control input-lg", placeholder: "First Name"%>
@@ -34,6 +45,9 @@
         </div>
         <div class="field form-group">
           <%= f.date_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth" %>
+        </div>
+        <div class="field form-group">
+          <%= f.number_field :zip, class:"form-control input-lg", placeholder: "Current Zip Code" %>
         </div>
         <div class= "form-group text-center">
           <%= f.submit "Create an account", class: "btn btn-success sign-up" %>

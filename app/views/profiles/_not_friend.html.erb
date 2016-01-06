@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-xs-4">
+    <div id="photo">
+     <% puts "here is the current user id #{current_user.id} and the @profile.id is #{@profile.id}"  %>
+     <% if current_user.id != @profile.id %>
+      <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
+     <% else %>
+        <%= link_to edit_user_path(current_user) do %>
+          <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
+        <% end%>
+     <% end%>
+    </div>
+  </div>
+ <div class="col-xs-8">
+  <h3>Know <%=@profile.full_name%>?</h3>
+  <p><%=link_to 'Send them a friend request' friendships_path(friend_id: user), method: :post </p>

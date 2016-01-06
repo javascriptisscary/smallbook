@@ -25,7 +25,7 @@ before_filter :edit_profile, only: [:edit, :update]
       redirect_to @user
     else
       flash[:alert] ="User not created"
-      redirect_to signup_path
+      render 'welcome/index'
     end
   end
   
