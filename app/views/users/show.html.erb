@@ -4,7 +4,7 @@
 <h1 class="text-center"><%= @profile.full_name%></h1>
 
   <% if current_user.id != @profile.id %>
-    <% if friends?(@profile.id)%>
+    <% if current_user.friends?(@profile.id)%>
       <%= render 'friends/show_friend' %>
     <% else %>
       <%=render 'profiles/not_friend' %>
