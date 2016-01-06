@@ -23,7 +23,9 @@ module UsersHelper
     puts "here is your array before sort #{posts}" 
   
     #reorder all posts in array by datetime
-    return posts.sort!
+    
+    posts.sort! { |a,b|  b <=> a}
+    return posts
   
   end
 

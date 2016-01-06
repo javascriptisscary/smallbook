@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
  
   def create
-    puts  "hi i'm your posts params #{post_params} mother fucker"
+    
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     
@@ -14,10 +14,10 @@ class PostsController < ApplicationController
     if @post.save
       
       flash[:notice] ="Post Successfully Created!"
-      redirect_to user_path(current_user.id)
+      redirect_to :back
     else
       flash[:alert] ="Post not created"
-      redirect_to user_path(current_user.id)
+      redirect_to :back
     end
   end
 
@@ -30,7 +30,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_path(current_user)
+    flash[:notice] ="Post Successfully Deleted!"
+    redirect_to :back
   end
   
 

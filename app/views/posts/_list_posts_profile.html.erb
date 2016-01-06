@@ -1,6 +1,6 @@
-<%all_posts = group_posts(@friendships, @profile) %>
-
-<%all_posts.each do |post| %>
+<% all_posts = group_posts(@friendships, @profile) %>
+<% unless all_posts == nil %>
+  <%all_posts.each do |post| %>
       <div class="wall-contain">
         <%if post.user_id == current_user.id%>
           <%= link_to edit_user_path(current_user) do %>
@@ -25,6 +25,7 @@
         <p class="post-content text-left"><%=post.content%></p>
       </div>
     <% end %>
+<% end %>
     
     
     
