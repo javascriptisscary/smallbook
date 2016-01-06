@@ -43,6 +43,14 @@ class User < ActiveRecord::Base
     
   end
     
+    
+    def all_friends
+      friends =[]
+      self.friendships.each do |friendship|
+        friends.push(friendship)
+      end
+      return friends.sort!
+    end
   
 
  
