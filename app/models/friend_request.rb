@@ -3,7 +3,7 @@ class FriendRequest < ActiveRecord::Base
   belongs_to :respondee, class_name: "User"
 
 
-  after_create :create_received, unless: :has_inverse? 
+  after_create :create_received, unless: :exists? 
   after_destroy :destroy_other, if: :has_inverse?
 
 
@@ -14,6 +14,9 @@ class FriendRequest < ActiveRecord::Base
     inverses.destroy_all  
   end
   
+  def exists?
+    self.class.exists?(user_id: user_id, received: true,  respondee_id: respondee_id, accepted: false )
+  end
   
   def create_received
     
@@ -31,7 +34,7 @@ class FriendRequest < ActiveRecord::Base
     #make the respondee the new user
   def received_values
     
-      { user_id: respondee_id, received: true,  respondee_id: user_id }
+      { user_id: respondee_id, received: true,  respondee_id: user_id, accepted: false }
   end
 
 end

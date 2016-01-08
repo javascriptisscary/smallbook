@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :posts
   
   has_many :friend_requests
-  has_many :senders, through: :friend_requests,
+  has_many :respondees, through: :friend_requests,
                               dependent: :destroy
   
             
