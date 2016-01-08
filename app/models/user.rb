@@ -5,9 +5,15 @@ class User < ActiveRecord::Base
   #associations
   has_many :friendships
   has_many :friends, through: :friendships,
-                     dependent: :destroy
+                         dependent: :destroy
   has_many :posts
   
+  has_many :friend_requests
+  has_many :senders, through: :friend_requests,
+                              dependent: :destroy
+  
+            
+
   
   #avatar validation for paperclip
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/

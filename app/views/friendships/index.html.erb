@@ -9,3 +9,15 @@
      </div>
   <%end%>
 </div>
+
+
+<div class="container">
+  <h2 class="text-center">Friendship Requests</h2>
+  <%current_user.friend_requests.each do |request| %>
+<%=image_tag request.respondee.avatar.url(:status)%>
+<p><%=request.respondee.full_name%> would like to add you as a friend.</p>
+ 
+<%end%>
+
+
+</div>

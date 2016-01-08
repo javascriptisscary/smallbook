@@ -1,0 +1,37 @@
+class FriendRequest < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :respondee, class_name: "User"
+
+
+  after_create :create_received, unless: :has_inverse? 
+  after_destroy :destroy_other, if: :has_inverse?
+
+
+# after_create: friend_request gets duplicated on respondee's end with an inverted user id and recieved: true.
+
+
+  def destroy_other
+    inverses.destroy_all  
+  end
+  
+  
+  def create_received
+    
+    self.class.create(received_values)
+  end
+  
+  def has_inverse?
+    self.class.exists?(received_values)
+  end
+  
+  def inverses
+    self.class.where(received_values)
+  end
+  
+    #make the respondee the new user
+  def received_values
+    
+      { user_id: respondee_id, received: true,  respondee_id: user_id }
+  end
+
+end

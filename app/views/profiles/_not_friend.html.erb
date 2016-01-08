@@ -13,4 +13,4 @@
   </div>
  <div class="col-xs-8 text-center">
   <h3>Know <%=@profile.full_name%>?</h3>
-  <p><%=link_to 'Send them a friend request', friendships_path(friend_id: @profile.id), method: :post %></p>
+  <p><%=link_to 'Send them a friend request', friend_requests_path(respondee: @profile.id), method: :post %></p>
