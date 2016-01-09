@@ -3,9 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post {
     margin-top: 4%;
+    float: right;
+    clear:both;
 }
 
-
+.post-button {
+    float:right;
+     clear:both;
+     margin-bottom: 4%;
+}
 .datetime {
     color: #9197A3;
     font-family: helvetica,arial,sans-serif;
@@ -23,7 +29,7 @@
 -moz-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
 box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
 float:right;
-
+clear:both;
 }
 
 .status-image {

@@ -1,12 +1,32 @@
 <%#show profile for when a user accesses his own profile%>
 
 <div class="container">
+  <div class="cover" style="background-image:url(<%= @profile.cover.url(:large) %>)">
+    <div id="photo">
+     
+     <% if current_user.id != @profile.id %>
+      <%= image_tag @profile.avatar.url(:cover), class:"img-responsive profile-image" %>
+     <% else %>
+       <%= link_to edit_user_path(current_user) do %>
+         <%= image_tag @profile.avatar.url(:cover), class:"img-responsive profile-image" %>
+       <% end%>
+     <% end%>
+      <i class="fa fa-camera" id="camera"></i>
+    </div>
+    <h2 class="cover-name"><%= @profile.full_name%></h2>
+  </div>
+  <div class="timeline">
+  </div>
+
+</div>
+
+<div class="container">
  
   <div class="col-xs-4">
     
    
     <table class="table">
-     <th><i class="fa fa-info-circle"></i></th>
+     <th><i class="fa fa-info-circle fa-2x"></i></th>
      <tr>
        <td>Name:</td>
        <td><%="#{@profile.first_name} #{@profile.last_name}"%></td>
@@ -52,7 +72,7 @@
     <p class="find-more"> <%= link_to "Find more friends", index_path %></p>
   </div>
   <div class="col-xs-8">
-   <div class="text-center">
+   
     
      <%= form_for @post do |p| %>
        <%=p.hidden_field :profile_id, value: current_user.id%> 
@@ -60,10 +80,10 @@
          <%=p.text_area(:content, cols:50, rows:3, class:"post", placeholder: "Whats on your mind?") %>
        </div>
        <div class="form-group">
-         <%=p.submit "Post", class: "btn btn-primary" %>
+         <%=p.submit "Post", class: "btn btn-primary post-button" %>
        </div>
       <% end %>
-   </div>
+   
       <%= render 'posts/list_posts_profile' %>
       
   
