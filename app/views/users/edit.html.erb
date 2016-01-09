@@ -2,11 +2,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center">
-      <%= image_tag @user.avatar.url(:medium), class:"img-responsive profile-image" %>
+      <%= image_tag @user.avatar.url(:medium), class:"img-responsive" %>
       <%= form_for @user,  html: { multipart: true } do |form| %>
         <%= form.file_field :avatar %>
-        <%= form.submit 'Submit Image', class: "btn btn-primary" %>
+        <%= form.submit 'Submit Profile Image', class: "btn btn-primary" %>
       <% end %>
+      <div>
+        <%= image_tag @user.cover.url(:small), class: "img-responsive" %>
+        <%= form_for @user,  html: { multipart: true } do |form| %>
+        <%= form.file_field :cover %>
+        <%= form.submit 'Submit Cover Image', class: "btn btn-primary" %>
+      <% end %>
+      </div>
     </div>
     <div class="col-md-7">
       <%= form_for @user do |f| %>

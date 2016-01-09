@@ -3,11 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile-image {
-    border:1px solid black;
-    
+    border:4px solid white;
+    position: relative;
+    left: 5%;
+    bottom: -115px;
+    border-radius: 2px;
+    outline: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 
+
+.cover-name {
+    color:white;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    position: relative;
+    left:26%;
+    bottom:15px;
+   font-weight: 800;
+
+}
+
+
+.cover {
+    background-repeat: none;
+    background-size: cover;
+    margin: 0 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-top:none;
+     border-radius: 2px;
+}
 
 #friend-count {
     font-size: .7em;
@@ -16,8 +42,8 @@
 
 #camera {
  position: relative;
- left: 6px;
- bottom:30px;
+ left: 65px;
+ bottom:-80px;
  font-size:2em;
  color: rgba(255,255,255,0.7);
 }
@@ -69,6 +95,23 @@
 }
 
 
+
+#photo {
+    padding-top: 5%;
+    
+    
+}
+
+.timeline {
+    height:45px;
+    background-color: white;
+    margin: 0 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-top:none;
+     border-radius: 2px;
+}
 
 /* font awesome icons */
 

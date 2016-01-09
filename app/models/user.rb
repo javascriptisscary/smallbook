@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", friend: "100x100#", status: "50x50#", thumb: "25x25#" }, default_url: "/images/missing_:style.png"
-  
+  has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", cover: "225x225>", friend: "100x100#", status: "50x50#", thumb: "25x25#" }, default_url: "/images/missing_:style.png"
+  has_attached_file :cover, styles: {large: "1200x500>", small: "300x132#"}, default_url: "/images/missing_:style.png"
   #associations
   has_many :friendships
   has_many :friends, through: :friendships,
@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
+  
+  #cover image vlaidation for paperclip
+  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
+  validates_with AttachmentSizeValidator, attributes: :cover, less_than: 2.megabytes
+  validates_attachment_file_name :cover, matches: [/png\Z/, /jpe?g\Z/]
 
   #standard validations
   validates :first_name, :last_name, :birthday, :email, presence:true
@@ -30,8 +35,7 @@ class User < ActiveRecord::Base
   
   
   #validate associations
-  validates_associated :friendships
-
+  validates_associated :friendships, :friend_requests
 
 
   def full_name

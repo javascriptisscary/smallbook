@@ -4,19 +4,9 @@
  
   <div class="col-xs-4">
     
-    <div id="photo">
-     <% puts "here is the current user id #{current_user.id} and the @profile.id is #{@profile.id}"  %>
-     <% if current_user.id != @profile.id %>
-      <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
-     <% else %>
-       <%= link_to edit_user_path(current_user) do %>
-         <%= image_tag @profile.avatar.url(:medium), class:"img-responsive profile-image" %>
-       <% end%>
-     <% end%>
-      <i class="fa fa-camera" id="camera"></i>
-    </div>
+   
     <table class="table">
-     <th><i class="fa fa-info-circle fa-2x"></i></th>
+     <th><i class="fa fa-info-circle"></i></th>
      <tr>
        <td>Name:</td>
        <td><%="#{@profile.first_name} #{@profile.last_name}"%></td>
@@ -73,9 +63,10 @@
          <%=p.submit "Post", class: "btn btn-primary" %>
        </div>
       <% end %>
+   </div>
       <%= render 'posts/list_posts_profile' %>
       
-   </div>
+  
   </div>
  </div>
 </div>

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post {
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 
@@ -16,11 +16,13 @@
     background-color: rgba(255,255,255,0.7);
     border-color: #E5E6E9 #DFE0E4 #D0D1D5;
     border-radius: 3px;
-    margin: 5% auto;
-    width: 65%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 75%;
 -webkit-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
 -moz-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
 box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
+float:right;
 
 }
 

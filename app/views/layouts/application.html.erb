@@ -13,61 +13,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  
   <nav class="navbar navbar-inverse">
-  <div class="container">
+    <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       
         <%= image_tag "smallbook.jpg", class: "navbar-brand"%>
-    </div>
+      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-      <ul class="nav navbar-nav navbar-right">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
        <% if current_user %>
-         <li id="name">
+          <li id="name">
          <%= link_to user_path(current_user) do %>
             <%= image_tag current_user.avatar.url(:thumb), class: "thumb"%>
-           <strong><%= current_user.first_name %></strong>
+            <strong><%= current_user.first_name %></strong>
           <% end%>
           </li>
-         <li>
+          <li>
            <%= link_to(content_tag(:i, nil, class: "fa fa-user-plus fa-2x", id: "logout"),  friendships_path) %>
-         </li>
-         <li>
+          </li>
+          <li>
           <%= link_to(content_tag(:i, nil, class: "fa fa-sign-out fa-2x", id: "logout"),  logout_path, method: "delete") %>
-         </li>
+          </li>
          
          <%else%>
         <%= form_for :session, url: login_path do |f| %>
-      <div class="form-inline" id="sessions-form">
-        <div class="form-group" >
+          <div class="form-inline" id="sessions-form">
+            <div class="form-group" >
           <%= f.email_field :email, class: "form-control form-half", id: "sessions", placeholder: "Email" %>
-        </div>
-        <div class="form-group">
+            </div>
+          <div class="form-group">
           <%= f.password_field :password, class: "form-control form-half", id: "sessions", placeholder: "Password"%>
-        </div>
+          </div>
         
           <%= f.submit "Log in", class: "btn btn-primary" %>    
           <% end %>
        <% end %>
-       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
    <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
    <% elsif flash[:alert]%>
      <div class="alert"><%= flash[:alert] %></div>
    <% end %>
 <%= yield %>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 </body>
 </html>

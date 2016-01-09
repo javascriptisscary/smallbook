@@ -34,3 +34,14 @@ body {
     text-align: center;
     padding: 5px
 }
+
+#wrapper {
+    width: 1075px;
+    margin: 0 auto;
+}
+
+#wrapper .container {
+    max-width: 100%;
+    display:block;
+    }
+    
