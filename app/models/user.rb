@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :respondees, through: :friend_requests,
                               dependent: :destroy
   
-            
+  has_many :likes          
 
   
   #avatar validation for paperclip

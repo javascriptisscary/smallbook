@@ -64,6 +64,27 @@ module PostsHelper
    
   
   
+  def show_likes(post)
+    x=0
+    post.likes.each do |like|
+      x=x+1
+    end
+  
+    return x
+  
+  end
+  
+  def user_already_liked(post)
+    post.likes.each do |like|
+      if like.user_id ==current_user.id
+        return like
+      end
+    end
+    
+    return false
+  end
+  
+  
   
   
   

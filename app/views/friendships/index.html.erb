@@ -13,19 +13,25 @@
 
 <div class="container">
   <h2 class="text-center">Friendship Requests</h2>
-  <div class="friend-request">
+  
   <%current_user.friend_requests.each do |request| %>
+   
     <%if request.received %>
+      <div class="friend-request">
       
       <%=image_tag request.respondee.avatar.url(:friend)%>
-      <div class="status text-left">
-        <h4 class="status-name"><strong><%=link_to request.respondee.full_name, user_path(request.respondee.id)%></strong></h4>
-         <p><%=request.respondee.first_name%> would like to add you as a friend.</p>
-        <p><%=mutual_friends %></p>
-        <p> <%=link_to "Accept Friend Request", friendships_path(friend_id: request.respondee.id), method: :post%></p>
-      </div>
+        <div class="status text-left">
+          <h4 class="status-name"><strong><%=link_to request.respondee.full_name, user_path(request.respondee.id)%></strong></h4>
+            <p><%=request.respondee.first_name%> would like to add you as a friend.</p>
+            <p><%=mutual_friends %></p>
+            <p> <%=link_to "Accept Friend Request", friendships_path(friend_id: request.respondee.id), method: :post%></p>
+        </div>
+      </div> 
+    
+      <%else%>
+        <%next%>
     <%end%>
 <%end%>
-  </div>
+ 
 
 </div>

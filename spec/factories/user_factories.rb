@@ -20,6 +20,11 @@ FactoryGirl.define do
     
   end  
     
+ 
+    
+    
+    
+    
        # after(:create) do |user|
     #user.friends << FactoryGirl.create(:friend)
     #end

@@ -1,5 +1,5 @@
 <%all_posts = group_posts(@friendships, @profile) %>
-<%puts "all_posts is equal to #{all_posts}" %>
+
 <%unless all_posts == nil %>
   <%all_posts.each do |post| %>
 
@@ -34,6 +34,16 @@
           <p class="datetime"><%=clean_date(post.created_at)%></p>
           </div>
         <p class="post-content text-left"><%=post.content%></p>
+        <div class="post-like">
+          <% like= user_already_liked(post) %>
+            <%if like%>
+            <%= link_to ('<i class="fa fa-thumbs-up fa-2x blue"></i>').html_safe, like, method: :delete, data: { confirm: "Sure you want to unlike?" }   %>
+          <% else %>
+            <%= link_to ('<i class="fa fa-thumbs-up fa-2x"></i>').html_safe, likes_path(post_id: post.id), method: :post   %>
+          <% end %>
+          <p class="show-likes"><%= show_likes(post) %></p>
+          <i class="fa fa-comment fa-2x"></i>
+        </div>
       </div>
     <% end %>
 <%end%>
