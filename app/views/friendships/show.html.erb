@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="text-center"><%="#{@user.full_name}'s"%> Friendships</h2>
+  <%@user.friendships.each do |friendship| x=1 %>
+    <div class="friend">
+     <%= link_to user_path(friendship.friend.id) do %>
+       <%= image_tag friendship.friend.avatar.url(:friend)%>
+     <%end%>
+      <span class="name<%=x%>"> <%= friendship.friend.full_name %></span>
+     </div>
+  <%end%>
+</div>

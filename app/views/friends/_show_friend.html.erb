@@ -49,7 +49,7 @@
      </tr>
      <% end %>
     </table>
-    <h3> <i class="fa fa-users"></i> Friends <span id="friend-count">&middot; <%=@profile.friendships.count%> </span></h3> 
+    <h3> <i class="fa fa-users"></i><%=link_to "Friends", friendship_path, class:"friends-link"%> <span id="friend-count">&middot; <%=@profile.friendships.count%> </span></h3> 
     <div>
     <% for friendship in @profile.friendships x=1 %>
     <div class="friend">

@@ -1,7 +1,14 @@
 class FriendshipsController < ApplicationController
 
   def index
-    
+   
+  end
+
+
+  def show
+     @user = User.find(params[:id])
+    puts "here i am fdsafldsajflsdaj ;lFINDME FINDME FINDIME #{@user} "    
+  
   end
 
 
@@ -26,5 +33,10 @@ class FriendshipsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+private
+  
+  def friendship_params
+    params.permit(:friend_id)
+  end
 
 end
