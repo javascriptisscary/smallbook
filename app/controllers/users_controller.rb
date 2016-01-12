@@ -70,7 +70,7 @@ before_filter :edit_profile, only: [:edit, :update]
   
   
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :zip, :webpage, :avatar, :cover)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :zip, :webpage, :avatar, :cover, :password_confirmation)
     end
 
 end

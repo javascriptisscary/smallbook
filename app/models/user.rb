@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, length: {minimum: 2} 
   validates :first_name, :last_name, length: {maximum: 15}
   validates :password, length: {minimum: 8},  on: :create
+  validates_confirmation_of :password
   validates :zip, length: { is: 5}, numericality: { only_integer:true }
   
   
