@@ -23,6 +23,7 @@ class FriendRequestsController < ApplicationController
     @friend_request = FriendRequest.find(params[:id])
     @friend_request.destroy
     flash[:notice] ="Friend request deleted"
+    redirect_to :back
   end
 
 

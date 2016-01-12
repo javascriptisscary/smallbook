@@ -23,12 +23,20 @@ class FriendRequest < ActiveRecord::Base
     self.class.create(received_values)
   end
   
+  def inverse
+    inverse= received_values
+    inverse[:received] = false
+    return inverse
+  end
+  
+  
   def has_inverse?
-    self.class.exists?(received_values)
+   
+    self.class.exists?(inverse)
   end
   
   def inverses
-    self.class.where(received_values)
+    self.class.where(inverse)
   end
   
     #make the respondee the new user

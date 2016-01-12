@@ -7,7 +7,7 @@ class FriendshipsController < ApplicationController
 
   def show
      @user = User.find(params[:id])
-    puts "here i am fdsafldsajflsdaj ;lFINDME FINDME FINDIME #{@user} "    
+    
   
   end
 
@@ -16,6 +16,8 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
     if @friendship.save
+      friend_request= FriendRequest.find(params[:friend_request_id])
+      friend_request.destroy!
       flash[:notice] = "Added friend"
       redirect_to user_path(current_user.id)
     else
@@ -28,7 +30,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship = current_user.friendships.find(params[:id])
-    @friendship.destroy
+    @friendship.destroy!
     flash[:notice] = "Removed friendship."
     redirect_to user_path(current_user.id)
   end
@@ -36,7 +38,7 @@ class FriendshipsController < ApplicationController
 private
   
   def friendship_params
-    params.permit(:friend_id)
+    params.permit(:friend_id, friend_request_id)
   end
 
 end
