@@ -29,7 +29,7 @@ gem 'jquery-ui-rails'
 group :production do
   
   gem 'rails_12factor'
-  gem 'aws-sdk'
+  gem 'aws-sdk', '~> 1.6'
 end
 
 group :development, :test do
