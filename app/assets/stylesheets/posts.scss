@@ -41,7 +41,10 @@ clear:both;
     
     border: 1px solid gray;
     float:left;
-    margin: 2%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    
 }
 
 .status {
@@ -50,11 +53,11 @@ clear:both;
 }
 
 .status-name{
-    padding-top:2%;
+    margin-top: 10px;
 }
 
 .post-content {
-    margin-top:5%;
+    margin-top:2%;
     margin-left:2%;
 }
 
@@ -111,13 +114,33 @@ clear:both;
     color: #337AB7;
 }
 
+
+/*comments*/
+.comment-wall {
+    background-color: rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.2);
+    width:100%;
+    float:right;
+}
+
+
+.comment-name{
+    margin-top:3px;
+    margin-bottom:2px;
+}
+
+.comment-content{
+    float:left;
+    margin-left:40px;
+}
+
 @media(min-width:768px){
   
   
   
   .wall-contain {
     width:75%;
-  
+   
   
   }
 }

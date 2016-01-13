@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :likes          
   
   has_many :posts
-  has_many :comments through: :posts
+  has_many :comments, through: :posts
   
   #avatar validation for paperclip
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
