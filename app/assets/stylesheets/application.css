@@ -45,3 +45,22 @@ body {
     display:block;
     }
     
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-xs-12 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.col-sm-4 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.col-sm-8 {
+  padding-left: 4px;
+  padding-right: 4px;
+}

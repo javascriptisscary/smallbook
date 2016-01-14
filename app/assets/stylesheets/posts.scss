@@ -125,19 +125,20 @@ clear:both;
 
 
 .comment-name{
-    margin-top:3px;
+    margin-top:5px;
     margin-bottom:2px;
 }
 
 .comment-content{
     float:left;
     margin-left:40px;
+    margin-top:0;
 }
 
 
 .new-comment {
     background-color: rgba(0,0,0,0.1);
-    
+    border-top: 1px solid rgba(0,0,0,0.2);
     width:100%;
     float:right;
     padding-top:0;
@@ -157,6 +158,12 @@ clear:both;
     margin: 5px;
 }
 
+.comment-datetime{
+    
+     color: #9197A3;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 10px;
+}
 @media(min-width:768px){
   
   

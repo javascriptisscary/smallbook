@@ -19,9 +19,10 @@
     text-align:center;
     position: relative;
     left:0;
-    bottom:-50px;
-   font-weight: 800;
-
+    bottom:-45px;
+   text-shadow: 1px 1px rgba(0,0,0,0.5);
+   font-family: "Lato";
+   text-rendering: optimizelegibility;
 }
 
 
@@ -31,7 +32,7 @@
     margin: 0 17px;
     border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: #D3D6DB;
     border-top:none;
      border-radius: 2px;
 }
@@ -147,14 +148,18 @@ color: blue;
     padding-right:8px;
 }
 
-/* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
+  /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    
   
-  .cover-name {
-    bottom:15px;
+.cover-name {
+    color:white;
+    left:10%;
+    bottom:0;
+    font-weight: 800;
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
-    color: white;
-  }
+}
   
   #camera{
     left:65px;
