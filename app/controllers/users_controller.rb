@@ -36,7 +36,8 @@ before_filter :edit_profile, only: [:edit, :update]
    
    @post = Post.new
    @friendships = @profile.friendships
-   puts "here's the friends posts #{@friends}"
+   @comment =Comment.new
+  
    
   end
   

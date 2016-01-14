@@ -1,22 +1,25 @@
 <% all_posts = group_posts(@friendships, @profile) %>
 <% unless all_posts == nil %>
   <%all_posts.each do |post| %>
+  
       <div class="wall-contain">
         <%if post.user_id == current_user.id%>
           <%= link_to edit_user_path(current_user) do %>
             <%= image_tag @profile.avatar.url(:status), class: "status-image" %>
-            <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }  %>
+          <%end%>
+          <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }  %>
            <div class="status text-left">
              <h4 class="status-name"><strong><%=link_to @profile.full_name, user_path(post.user_id)%></strong></h4>
-          <%end%>
+          
         <%else %>
           <%friendship = find_friends(@friendships, post.user_id)%>
           <%= link_to user_path(post.user_id) do %>
             <%= image_tag friendship.friend.avatar.url(:status), class: "status-image" %>
-            <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: "Are you sure you want to delete your friend's post?" }  %>
+          <%end%>
+          <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post, method: :delete, data: { confirm: "Are you sure you want to delete your friend's post?" }  %>
            <div class="status text-left">
              <h4 class="status-name"><strong><%=link_to friendship.friend.full_name, user_path(post.user_id)%></strong></h4>
-           <%end%>
+           
         <%end%>
           
           
@@ -25,7 +28,7 @@
         <p class="post-content text-left"><%=post.content%></p>
         <div class="post-like">
           <% like= user_already_liked(post) %>
-            <%if like%>
+          <% if like%>
             <%= link_to ('<i class="fa fa-thumbs-up fa-2x blue"></i>').html_safe, like, method: :delete, data: { confirm: "Sure you want to unlike?" }   %>
           <% else %>
             <%= link_to ('<i class="fa fa-thumbs-up fa-2x"></i>').html_safe, likes_path(post_id: post.id), method: :post   %>
@@ -56,13 +59,20 @@
                     <div class="status text-left">
                       <h6 class="comment-name"><strong><%=link_to @commentor.full_name, user_path(comment.user_id)%></strong></h6>
             
-            <% end %>
+                  <% end %>
                       <p class="datetime"><%=clean_date(comment.created_at)%></p>
                     </div>
         <p class="comment-content text-left"><%=comment.content%></p>
                 </div>
+               
+                
               <% end %>
             <% end %>
+            <%= render '/comments/new_comment', {post: post} %>
       </div>
+       
+   
    <%end%>
+   
  <%end%>
+ 

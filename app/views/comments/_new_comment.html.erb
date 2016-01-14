@@ -1,0 +1,16 @@
+<div class="new-comment">
+  <%= link_to edit_user_path(current_user) do %>
+    <%= image_tag @profile.avatar.url(:thumb), class: "status-image" %>
+  <%end%>
+  
+    <%= form_for @comment do |c| %>
+        <%=c.hidden_field :post_id, value: post.id%> 
+        <%=c.text_field(:content,  class:"comment", placeholder: "Leave a comment") %>
+      
+      
+        <%=c.submit "Post", class: "btn btn-success comment-button" %>
+      
+    <% end %>
+  
+   
+</div>

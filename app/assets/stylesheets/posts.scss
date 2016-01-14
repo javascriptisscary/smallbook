@@ -134,6 +134,29 @@ clear:both;
     margin-left:40px;
 }
 
+
+.new-comment {
+    background-color: rgba(0,0,0,0.1);
+    
+    width:100%;
+    float:right;
+    padding-top:0;
+}
+
+.comment {
+    float:left;
+    font-size:12px;
+    margin-top:5px;
+    width:70%;
+    padding-left:5px;
+}
+
+.comment-button {
+    font-size:10px;
+    padding: 3px 6px;
+    margin: 5px;
+}
+
 @media(min-width:768px){
   
   
