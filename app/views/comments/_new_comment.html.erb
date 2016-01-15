@@ -1,6 +1,6 @@
 <div class="new-comment">
   <%= link_to edit_user_path(current_user) do %>
-    <%= image_tag @profile.avatar.url(:thumb), class: "status-image" %>
+    <%= image_tag current_user.avatar.url(:thumb), class: "status-image" %>
   <%end%>
   
     <%= form_for @comment do |c| %>
