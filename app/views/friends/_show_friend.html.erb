@@ -1,5 +1,5 @@
 <div class="container">
-  <% if @profile.avatar.file? %>
+  <% if @profile.cover.file? %>
   <div class="cover" style="background-image:url(<%= @profile.cover.url(:large) %>)">
      <% else %>
   <div class="cover">    
@@ -9,7 +9,7 @@
     
       <%= image_tag @profile.avatar.url(:cover), class:"img-responsive profile-image" %>
      
-      <i class="fa fa-camera" id="camera"></i>
+      
     </div>
     <h2 class="cover-name"><%= @profile.full_name%></h2>
   </div>
