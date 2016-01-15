@@ -9,10 +9,10 @@
     <div id="photo">
      
      <% if current_user.id != @profile.id %>
-      <%= image_tag @profile.avatar.url(:cover), class:"img-responsive profile-image" %>
+      <%= image_tag @profile.avatar.url(:cover), id:"profile-image" %>
      <% else %>
        <%= link_to edit_user_path(current_user) do %>
-         <%= image_tag @profile.avatar.url(:cover), class:"img-responsive profile-image" %>
+         <%= image_tag @profile.avatar.url(:cover), id:"profile-image" %>
        <% end%>
      <% end%>
       <i class="fa fa-camera" id="camera"></i>
