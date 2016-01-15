@@ -3,11 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#post-content {
-    
-  
-border: 5px solid black;
-}
+
 
 
 .post {
@@ -16,6 +12,14 @@ border: 5px solid black;
     clear:both;
     max-width: 100%;
     resize: none;
+   
+    border: 3px solid #D3D6DB;
+    border-radius: 5px;
+-webkit-box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
+-moz-box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
+box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
+   
+    
 }
 
 .post-button {
