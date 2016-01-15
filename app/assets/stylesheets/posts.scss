@@ -3,12 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#post-content {
+    
+  
+border: 5px solid black;
+}
+
 
 .post {
     margin-top: 4%;
     float: right;
     clear:both;
     max-width: 100%;
+    resize: none;
 }
 
 .post-button {
