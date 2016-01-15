@@ -23,8 +23,18 @@ $(document).on('page:change',function () {
   $( "#datepicker" ).datepicker({ changeMonth: true, changeYear:true, yearRange: "1940:2005", dateFormat: 'yy-mm-dd',  defaultDate: '1980-01-01'});
     
  
-
-
+ 
+ //if opened with mobile phone, remove cover image
+if ($(window).width() <400) {
+  console.log("changing cover");
+  $('.cover').css({
+    backgroundImage : 'none',
+    backgroundColor : '#E9EAED'
+    });
+  
+  
+  
+}
 
 
 

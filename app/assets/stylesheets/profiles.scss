@@ -35,6 +35,7 @@
     border-color: #D3D6DB;
     border-top:none;
      border-radius: 2px;
+     text-align:center;
 }
 
 #friend-count {
@@ -57,7 +58,7 @@
 #photo {
     margin-left: auto;
     margin-right: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     border-radius: 2px;
 }
 
@@ -126,7 +127,7 @@
 
 
 .cover-photo-edit {
-    margin-top:10%;
+    margin:10%;
 }
 
 
@@ -160,14 +161,19 @@ color: blue;
   /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
 
+    .cover {
+        text-align:left;
+    }
+    
     
     #photo {
     
-     
+    
     position: relative;
     margin: 0;
     left: 5%;
     bottom: -80px;
+    padding-top:100px;
     
     
     
