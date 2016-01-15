@@ -30,11 +30,7 @@
     background-repeat: none;
     background-size: cover;
     margin: 0 17px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #D3D6DB;
-    border-top:none;
-     border-radius: 2px;
+    
      text-align:center;
 }
 
@@ -48,7 +44,7 @@
 
 #camera {
  position: relative;
- left: 10px;
+ left: -39%;
  bottom:30px;
  font-size:1.5em;
  color: rgba(255,255,255,0.7);
@@ -163,6 +159,11 @@ color: blue;
 
     .cover {
         text-align:left;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #D3D6DB;
+        border-top:none;
+        border-radius: 2px;
     }
     
     
@@ -179,6 +180,10 @@ color: blue;
     
 }
     
+  #camera {
+    left: 10px;
+    bottom:30px;
+  }
   
 .cover-name {
     color:white;

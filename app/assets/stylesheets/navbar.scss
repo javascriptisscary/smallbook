@@ -17,6 +17,9 @@
    margin-right: 5px;
 }
 
+#name {
+    padding-left:8px;
+}
 
 #name a {
     color:white;
@@ -38,7 +41,7 @@
 
 #logout{
     color:black;
-  
+    padding-left:8px;
     
     
 }
@@ -58,4 +61,8 @@
     padding-top:10px;
     padding-bottom:10px;
     
+}
+
+.navbar-toggle {
+    margin-right:30px;
 }
