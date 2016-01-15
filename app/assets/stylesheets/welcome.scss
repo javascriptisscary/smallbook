@@ -15,26 +15,11 @@
 }
 
 
- ::-webkit-input-placeholder {
-   font-size: 18px;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   font-size: 18px;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   font-size: 18px;
-}
-
-:-ms-input-placeholder {  
-   font-size: 18px;
-}
 
 
 #nameform {
     padding: 6px 0;
-    
+    margin-bottom:9px;
     display: inline-block;
     width: auto;
 }
@@ -49,25 +34,23 @@
     margin-top:10px;
     padding-right:15px;
     
-    
-    
-    /*for placeholders inside of sessions form */
-    
-     ::-webkit-input-placeholder {
-   font-size: 14px;
-}
+    ::-webkit-input-placeholder {
+   font-size: 12px;
+  }
 
-:-moz-placeholder { /* Firefox 18- */
-   font-size: 14px;  
-}
+  :-moz-placeholder { /* Firefox 18- */
+   font-size: 12px;  
+  }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   font-size: 14px;
-}
+  ::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 12px;
+  }
 
-:-ms-input-placeholder {  
-   font-size: 14px;
-}
+  :-ms-input-placeholder {  
+   font-size: 12px;
+   }
+    
+   
 
 }
 
@@ -82,3 +65,47 @@
     background-color:white;
     padding:10px;
 }
+
+ ::-webkit-input-placeholder {
+   font-size: 12px;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+   font-size: 12px;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 12px;
+  }
+
+  :-ms-input-placeholder {  
+   font-size: 12px;
+   }
+
+/* Remove controls from Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+ /*for placeholders inside of sessions form */
+    
+  ::-webkit-input-placeholder {
+   font-size: 18px;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+   font-size: 18px;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 18px;
+  }
+
+  :-ms-input-placeholder {  
+   font-size: 18px;
+   }
+    }
+
+
