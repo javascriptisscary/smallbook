@@ -1,7 +1,11 @@
 <%#show profile for when a user accesses his own profile%>
 
 <div class="container">
+  <% if current_user.avatar.file? %>
   <div class="cover" style="background-image:url(<%= @profile.cover.url(:large) %>)">
+    <% else %>
+  <div class="cover">    
+  <% end %>
     <div id="photo">
      
      <% if current_user.id != @profile.id %>
