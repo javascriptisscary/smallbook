@@ -1,5 +1,9 @@
 <div class="container">
+  <% if @profile.avatar.file? %>
   <div class="cover" style="background-image:url(<%= @profile.cover.url(:large) %>)">
+     <% else %>
+  <div class="cover">    
+  <% end %>
     <div id="photo">
      
     
