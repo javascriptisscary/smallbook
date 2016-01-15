@@ -2,16 +2,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center">
+      <div>
       <%= image_tag @user.avatar.url(:medium), class:"img-responsive" %>
       <%= form_for @user,  html: { multipart: true } do |form| %>
         <%= form.file_field :avatar %>
         <%= form.submit 'Submit Profile Image', class: "btn btn-primary" %>
       <% end %>
-      <div>
-        <%= image_tag @user.cover.url(:small), class: "img-responsive" %>
+      </div>
+      <div class="cover-photo-edit">
+        
+        <% if @user.cover.file? %>
+          <%= image_tag @user.cover.url(:small), class: "img-responsive"%>
+        <% end%>
         <%= form_for @user,  html: { multipart: true } do |form| %>
         <%= form.file_field :cover %>
-        <%= form.submit 'Submit Cover Image', class: "btn btn-primary" %>
+        <%= form.submit 'Submit Cover Image', class: "btn btn-primary", title: "Cover images are optimal with dimensions of about 1200 width to 300-500 height." %>
       <% end %>
       </div>
     </div>

@@ -98,15 +98,30 @@
   
   <script>
     $(document).ready(function () {
+  
+  
+  $("#profile-image") // Create a new <img>
+  .attr("src", $("#profile-image").attr("src")) // Copy the src attr from the target <img>
+    .load(function() {
+      // Print to console
+      console.log("Width:  " + this.width);
+      console.log("Height: " + this.height);
+      
+      $('#photo').addClass('modify').width(this.width).height(this.height);
+  });
+  
+  
+  
+  
   console.log("are you running?");
   // add a class to make height and width of photo div exact same size as dynamic image from paperclip
   
 
-  var image_width = $('#profile-image').width();
-  var image_height = $('#profile-image').height();
+  //var image_width = $('#profile-image').width();
+  //var image_height = $('#profile-image').height();
   
   
-  $('#photo').addClass('modify').width(image_width).height(image_height);
+  //
   
     });
 
