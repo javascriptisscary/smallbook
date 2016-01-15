@@ -1,13 +1,13 @@
-$(document).on('page:change', function () {
+$(document).on('page:change',function () {
   
   // add a class to make height and width of photo div exact same size as dynamic image from paperclip
   
 
-  var image_width = $('#profile-image').width();
-  var image_height = $('#profile-image').height();
+  //var image_width = $('#profile-image').width();
+  //var image_height = $('#profile-image').height();
   
   
-  $('#photo').addClass('modify').width(image_width).height(image_height);
+ // $('#photo').addClass('modify').width(image_width).height(image_height);
   
   
 

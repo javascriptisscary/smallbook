@@ -12,7 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
 
-
+gem 'turbolinks'
 
 gem 'jbuilder', '~> 2.0'
 
@@ -25,6 +25,8 @@ gem "paperclip", "~> 4.3"
 gem 'pg'
 
 gem 'jquery-ui-rails'
+
+
 
 group :production do
   
