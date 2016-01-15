@@ -47,7 +47,7 @@
           <%= f.password_field :password_confirmation, class: "form-control input-lg", placeholder: " Reenter Password"%>
         </div>
         <div class="field form-group">
-          <%= f.date_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth YYYY-MM-DD" %>
+          <%= f.text_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth YYYY-MM-DD" %>
         </div>
         <div class="field form-group">
           <%= f.number_field :zip, class:"form-control input-lg", placeholder: "Current Zip Code" %>
@@ -60,4 +60,4 @@
     </div>
   </div>
 </div>
-  <% end %>
+<% end %>
