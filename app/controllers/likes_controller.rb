@@ -7,7 +7,7 @@ class LikesController < ApplicationController
       
       if @like.save
         flash[:notice] = "You liked post #{@like.post_id}"
-        redirect_to current_user
+        redirect_to :back
       else
         flash[:alert] ="Like didn't work"
         redirect_to :back
