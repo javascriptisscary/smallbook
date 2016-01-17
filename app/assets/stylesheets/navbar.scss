@@ -66,3 +66,17 @@
 .navbar-toggle {
     margin-right:30px;
 }
+
+.login-button {
+    text-align:center;
+}
+
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 768px) {
+
+    .login-button {
+          text-align: initial;
+    }
+    
+}

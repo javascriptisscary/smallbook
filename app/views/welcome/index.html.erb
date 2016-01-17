@@ -28,11 +28,11 @@
       <% end %>
       <%= form_for(@user) do |f| %>
         
-        <div class="form-inline">
-          <div class= "field form-group" id="nameform">
+        <div class="inline">
+          <div class= "form-group col-xs-6" id="first-name">
             <%= f.text_field :first_name , class: "form-control input-lg", placeholder: "First Name"%>
           </div>
-          <div class= "field form-group" id="nameform">
+          <div class= "form-group col-xs-6" id="last-name">
             <%= f.text_field :last_name, class: "form-control input-lg", placeholder: "Last Name" %>
           </div>
         </div>
@@ -50,9 +50,9 @@
           <%= f.text_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth YYYY-MM-DD" %>
         </div>
         <div class="field form-group">
-          <%= f.number_field :zip, class:"form-control input-lg", placeholder: "Current Zip Code" %>
+          <%= f.number_field :zip, class:"form-control input-lg", placeholder: "6 Digit Zip Code" %>
         </div>
-        <div class= "form-group text-center">
+        <div class="form-group text-center">
           <%= f.submit "Create an account", class: "btn btn-success sign-up" %>
     
         </div>
