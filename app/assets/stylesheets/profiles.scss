@@ -4,15 +4,11 @@
 
 #profile-image {
     border:4px solid white;
-    
     margin-left: auto;
     margin-right: auto;
-    
     border-radius: 2px;
     outline: 1px solid rgba(0, 0, 0, 0.4);
 }
-
-
 
 .cover-name {
     color:black;;
@@ -20,11 +16,10 @@
     position: relative;
     left:0;
     bottom:-45px;
-   text-shadow: 1px 1px rgba(0,0,0,0.5);
-   font-family: "Lato";
-   text-rendering: optimizelegibility;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+    font-family: "Lato";
+    text-rendering: optimizelegibility;
 }
-
 
 .cover {
     background-repeat: none;
@@ -38,17 +33,13 @@
     color:gray;
 }
 
-
-
-
 #camera {
- position: relative;
- left: -39%;
- bottom:30px;
- font-size:1.5em;
- color: rgba(255,255,255,0.7);
+    position: relative;
+    left: -39%;
+    bottom:30px;
+    font-size:1.5em;
+    color: rgba(255,255,255,0.7);
 }
-
 
 #photo {
     margin-left: auto;
@@ -56,8 +47,6 @@
     padding-top: 50px;
     border-radius: 2px;
 }
-
-
 
 /* names on friends' profile pics */
 
@@ -101,10 +90,6 @@
     
 }
 
-
-
-
-
 .timeline {
     height:40px;
     background-color: white;
@@ -120,21 +105,16 @@
     
 }
 
-
 .cover-photo-edit {
     margin:10%;
 }
-
-
 
 #delete-post {
     float:right;
 }
 
 .friends-link {
-    color:black;
-    
-    
+    color:black;    
 }
 
 /* font awesome icons */
@@ -167,46 +147,37 @@ color: blue;
     
     
     #photo {
+        position: relative;
+        margin: 0;
+        left: 5%;
+        bottom: -80px;
+        padding-top:100px;
+    }
     
-    
-    position: relative;
-    margin: 0;
-    left: 5%;
-    bottom: -80px;
-    padding-top:100px;
-    
-    
-    
-}
-    
-  #camera {
-    left: 10px;
-    bottom:30px;
-  }
+    #camera {
+        left: 10px;
+        bottom:30px;
+    }
   
-.cover-name {
-    color:white;
-    left:10%;
-    bottom:0;
-    font-weight: 800;
-    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
-}
+    .cover-name {
+        color:white;
+        left:10%;
+        bottom:0;
+        font-weight: 800;
+        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    }
+    
+    .time-line {
+        height: 45px;
+    }
   
- 
-  
-  .time-line {
-    height: 45px;
-  }
-  
-  
-
 }
 
 
  /* Medium Devices, Desktops */
-  @media only screen and (min-width : 992px) {
-    .cover-name {
-      left: -150px;
-    }
+    @media only screen and (min-width : 992px) {
+        .cover-name {
+            left: -150px;
+        }
     }
 

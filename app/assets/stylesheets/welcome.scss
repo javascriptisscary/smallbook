@@ -6,12 +6,9 @@
     margin:auto auto;
 }
 
-
-
 #first-name{
     padding-left:0;
-    padding-right:0;
-    
+    padding-right:0;    
 }
 
 #last-name{
@@ -19,15 +16,11 @@
     padding-right:0;
 }
 
-
-.nameform {
-   
-   
+.nameform {   
     display: inline-block;
     width: auto;
     float:left;
     clear: none;
-    
 }
 
 .inline{
@@ -35,18 +28,15 @@
     max-width:100%;
 }
 
-
 #sessions {
     font-size: 14px;
     height: 28px;
 }
 
-
 .sign-up {
     margin-top: 5%;
     font-size: 1.5em;
 }
-
 
 #error_explanation{
     border: 2px solid red;
@@ -55,42 +45,33 @@
 }
 
 
-
 /* Remove controls from Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
-  
- 
-  
+  -moz-appearance: textfield;  
 }
-
-
-
 
 #sessions-form {
     margin-top:10px;
     padding-right:15px;
     
     ::-webkit-input-placeholder {
-   font-size: 14px;
-  }
+        font-size: 14px;
+    }
 
-  :-moz-placeholder { /* Firefox 18- */
-   font-size: 14px;
+    :-moz-placeholder { /* Firefox 18- */
+        font-size: 14px;
   
-  }
+    }
 
-  ::-moz-placeholder {  /* Firefox 19+ */
-   font-size: 14px;
+    ::-moz-placeholder {  /* Firefox 19+ */
+        font-size: 14px;
    
-  }
+    }
 
-  :-ms-input-placeholder {  
-   font-size: 14px;
-   }
+    :-ms-input-placeholder {  
+       font-size: 14px;
+    }
     
-   
-
 }
 
 
@@ -114,26 +95,26 @@ input[type=number] {
    }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+    @media only screen and (min-width : 768px) {
  /*for placeholders inside of sessions form */
     
-  ::-webkit-input-placeholder {
-   font-size: 18px;
-  }
+      ::-webkit-input-placeholder {
+       font-size: 18px;
+      }
 
-  :-moz-placeholder { /* Firefox 18- */
-   font-size: 18px;
-   color: #999;
-  }
+      :-moz-placeholder { /* Firefox 18- */
+       font-size: 18px;
+       color: #999;
+      }
 
-  ::-moz-placeholder {  /* Firefox 19+ */
-   font-size: 18px;
-   color: #999;
-  }
+      ::-moz-placeholder {  /* Firefox 19+ */
+           font-size: 18px;
+           color: #999;
+      }
 
-  :-ms-input-placeholder {  
-   font-size: 18px;
-   }
+        :-ms-input-placeholder {  
+            font-size: 18px;
+         }
     }
 
 

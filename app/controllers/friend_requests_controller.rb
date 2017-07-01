@@ -10,8 +10,6 @@ class FriendRequestsController < ApplicationController
         flash[:alert] ="Friend request not sent"
         redirect_to :back
     end
-    
-    
   end
   
   
@@ -22,15 +20,9 @@ class FriendRequestsController < ApplicationController
   def destroy
     @friend_request = FriendRequest.find(params[:id])
     @friend_request.destroy
+    
     flash[:notice] ="Friend request deleted"
     redirect_to :back
   end
-
-
-
-
-
-
-
-
+  
 end  

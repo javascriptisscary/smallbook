@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-
-
 .post {
     margin-top: 4%;
     float: right;
@@ -17,9 +14,7 @@
     border-radius: 5px;
 -webkit-box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
 -moz-box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
-box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
-   
-    
+box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);    
 }
 
 .post-button {
@@ -28,6 +23,7 @@ box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
      margin-bottom: 4%;
      margin-top: 2%;
 }
+
 .datetime {
     color: #9197A3;
     font-family: helvetica,arial,sans-serif;
@@ -41,15 +37,14 @@ box-shadow: 0px 14px 62px -24px rgba(0,0,0,1);
     margin-top: 2%;
     margin-bottom: 2%;
     width: 100%;
--webkit-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
--moz-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
-float:right;
-clear:both;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
+    box-shadow: 0px 0px 2px 0px rgba(0,133,250,0.5);
+    float:right;
+    clear:both;
 }
 
 .status-image {
-    
     border: 1px solid gray;
     float:left;
     margin-left: 5px;
@@ -59,7 +54,6 @@ clear:both;
 }
 
 .status {
-    
     line-height: 70%;
 }
 
@@ -75,7 +69,6 @@ clear:both;
 .glyphicon-remove{
     float:right;
     color: #D0D1D5;
-    
 }
 
 .glyphicon-remove:hover {
@@ -98,7 +91,6 @@ clear:both;
    margin-top:1%;
    float: left;
 }
-
 
 .fa-thumbs-up:hover {
     color:black;
@@ -125,7 +117,6 @@ clear:both;
     color: #337AB7;
 }
 
-
 /*comments*/
 .comment-wall {
     background-color: rgba(0,0,0,0.1);
@@ -133,7 +124,6 @@ clear:both;
     width:100%;
     float:right;
 }
-
 
 .comment-name{
     margin-top:5px;
@@ -145,7 +135,6 @@ clear:both;
     margin-left:40px;
     margin-top:0;
 }
-
 
 .new-comment {
     background-color: rgba(0,0,0,0.1);
@@ -176,12 +165,7 @@ clear:both;
     font-size: 10px;
 }
 @media(min-width:768px){
-  
-  
-  
   .wall-contain {
     width:75%;
-   
-  
   }
 }

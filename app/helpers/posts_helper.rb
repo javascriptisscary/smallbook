@@ -2,8 +2,6 @@ module PostsHelper
   
   #make time and date more legiable. 
   def clean_date(dateTime)
-    
-    
     string1= dateTime.to_s
     puts "this is the time in a string #{string1}"
     time =string1.slice(11..15)
@@ -18,11 +16,8 @@ module PostsHelper
       day.slice!(0)
     end
   
-  
     clean_month =set_month(month)
-  
     return "#{clean_month} #{day}, #{year} at #{time} UTC"
-  
   end
   
   
@@ -56,10 +51,8 @@ module PostsHelper
         month = "November"
     when "12"
         month = "December"
-    
     end      
    
-    
   end
    
   
@@ -71,7 +64,6 @@ module PostsHelper
     end
   
     return x
-  
   end
   
   def user_already_liked(post)
@@ -83,9 +75,5 @@ module PostsHelper
     
     return false
   end
-  
-  
-  
-  
   
 end

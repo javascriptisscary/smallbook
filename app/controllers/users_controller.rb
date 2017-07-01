@@ -7,16 +7,11 @@ before_filter :edit_profile, only: [:edit, :update]
     @users = User.all
   end
 
-
-
   def new
     @user = User.new  
   end
 
-  
-  
   def create
-    
     @user = User.new(user_params)
     
     if @user.save
@@ -31,24 +26,15 @@ before_filter :edit_profile, only: [:edit, :update]
   
   
   def show
-  
-   @profile = User.find(params[:id])
-   
-   @post = Post.new
-   @friendships = @profile.friendships
-   @comment =Comment.new
-  
-   
+    @profile = User.find(params[:id])
+    @post = Post.new
+    @friendships = @profile.friendships
+    @comment =Comment.new
   end
-  
-
-  
-
   
   def edit
     @user = User.find(params[:id])
   end
-  
   
   def update
     @user = User.find(params[:id])
@@ -62,17 +48,11 @@ before_filter :edit_profile, only: [:edit, :update]
     end
   end
   
-  
-  
-  
   private
   
-   
-  
-  
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :zip, :webpage, :avatar, :cover, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :zip, :webpage, :avatar, :cover, :password_confirmation)
+  end
 
 end
 

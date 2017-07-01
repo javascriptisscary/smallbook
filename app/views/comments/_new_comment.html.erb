@@ -3,14 +3,9 @@
     <%= image_tag current_user.avatar.url(:thumb), class: "status-image" %>
   <%end%>
   
-    <%= form_for @comment do |c| %>
-        <%=c.hidden_field :post_id, value: post.id%> 
-        <%=c.text_field(:content,  class:"comment", placeholder: "Leave a comment") %>
-      
-      
-        <%=c.submit "Post", class: "btn btn-success comment-button" %>
-      
-    <% end %>
-  
-   
+  <%= form_for @comment do |c| %>
+    <%=c.hidden_field :post_id, value: post.id%> 
+    <%=c.text_field(:content,  class:"comment", placeholder: "Leave a comment") %>
+    <%=c.submit "Post", class: "btn btn-success comment-button" %>
+  <% end %> 
 </div>

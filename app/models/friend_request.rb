@@ -2,13 +2,9 @@ class FriendRequest < ActiveRecord::Base
   belongs_to :user
   belongs_to :respondee, class_name: "User"
 
-
   after_create :create_received, unless: :exists? 
   after_destroy :destroy_other, if: :has_inverse?
-
-
-# after_create: friend_request gets duplicated on respondee's end with an inverted user id and recieved: true.
-
+  # after_create: friend_request gets duplicated on respondee's end with an inverted user id and recieved: true.
 
   def destroy_other
     inverses.destroy_all  
@@ -19,7 +15,6 @@ class FriendRequest < ActiveRecord::Base
   end
   
   def create_received
-    
     self.class.create(received_values)
   end
   
@@ -29,20 +24,17 @@ class FriendRequest < ActiveRecord::Base
     return inverse
   end
   
-  
   def has_inverse?
-   
-    self.class.exists?(inverse)
+     self.class.exists?(inverse)
   end
   
   def inverses
     self.class.where(inverse)
   end
   
-    #make the respondee the new user
+  #make the respondee the new user
   def received_values
-    
-      { user_id: respondee_id, received: true,  respondee_id: user_id, accepted: false }
+    { user_id: respondee_id, received: true,  respondee_id: user_id, accepted: false }
   end
 
 end

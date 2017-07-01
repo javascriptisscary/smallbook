@@ -2,18 +2,16 @@ class User < ActiveRecord::Base
   has_secure_password
   has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", cover: "225x225>", friend: "100x100#", status: "50x50#", thumb: "25x25#" }, default_url: "/images/missing_:style.png"
   has_attached_file :cover, styles: {large: "1200x500>", small: "300x132#"}, default_url: "/images/missing_:style.png"
+  
   #associations
   has_many :friendships
   has_many :friends, through: :friendships,
                          dependent: :destroy
- 
   
   has_many :friend_requests
   has_many :respondees, through: :friend_requests,
                               dependent: :destroy
-  
   has_many :likes          
-  
   has_many :posts
   has_many :comments, through: :posts
   
@@ -36,15 +34,12 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :zip, length: { is: 5}, numericality: { only_integer:true }
   
-  
   #validate associations
   validates_associated :friendships, :friend_requests
-
 
   def full_name
     self.first_name + " " + self.last_name
   end
- 
  
   def friends?(id)
     self.friendships.each do |friendship|
@@ -53,19 +48,14 @@ class User < ActiveRecord::Base
       end
     end
     return false
-    
   end
     
-    
-    def all_friends
-      friends =[]
-      self.friendships.each do |friendship|
-        friends.push(friendship)
-      end
-      return friends.sort!
+  def all_friends
+    friends =[]
+    self.friendships.each do |friendship|
+      friends.push(friendship)
     end
-  
-
- 
+    return friends.sort!
+  end
 
 end

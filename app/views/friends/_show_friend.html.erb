@@ -5,11 +5,7 @@
   <div class="cover">    
   <% end %>
     <div id="photo">
-     
-    
       <%= image_tag @profile.avatar.url(:cover), id:"profile-image" %>
-     
-      
     </div>
     <h2 class="cover-name"><%= @profile.full_name%></h2>
   </div>
@@ -20,12 +16,7 @@
 
 
 <div class="container">
- 
-
   <div class="col-xs-12 col-sm-4">
-    
-    
-   
     <table class="table">
      <th><i class="fa fa-info-circle fa-2x"></i></th>
      <tr>
@@ -85,7 +76,7 @@
        </div>
       <% end %>
       <%= render 'posts/list_posts_friend' %>
-      
+
    </div>
   </div>
  </div>

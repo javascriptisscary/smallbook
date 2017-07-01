@@ -4,15 +4,12 @@ class PostsController < ApplicationController
   
  
   def create
-    
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     
     #we're going to have to check that the hidden field id is an actually a friend of the user, since hidden field
     #can be abused with JS
-    
     if @post.save
-      
       flash[:notice] ="Post Successfully Created!"
       redirect_to :back
     else
@@ -21,11 +18,9 @@ class PostsController < ApplicationController
     end
   end
 
-  
   def update
     
   end
-
 
   def destroy
     @post = Post.find(params[:id])
@@ -34,17 +29,10 @@ class PostsController < ApplicationController
     redirect_to :back
   end
   
-
-
   private
   
-   
-  
-  
-    def post_params
-      params.require(:post).permit(:content, :profile_id)
-    end
-
-
+  def post_params
+    params.require(:post).permit(:content, :profile_id)
+  end
 
 end

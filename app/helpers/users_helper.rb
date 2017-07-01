@@ -13,7 +13,6 @@ module UsersHelper
   
     for friendship in friendships do
       for post in friendship.friend.posts do
-        
         if post.profile_id ==profile.id
           posts.push(post)
         end
@@ -23,33 +22,16 @@ module UsersHelper
     puts "here is your array before sort #{posts}" 
   
     #reorder all posts in array by datetime
-    
     posts.sort! { |a,b|  b <=> a}
     return posts
-  
   end
-
-
 
   def find_friends(friendships, friend_id)
-    
-    
     for friendship  in friendships do
       if friendship.friend.id ==friend_id
-        
-         
-         return friendship
+        return friendship
       end
-      
-    
     end
-
-  
   end
-
-
-
-
-
 
 end
