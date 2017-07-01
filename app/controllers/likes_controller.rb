@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
     
-    
   def create
     @like = Like.new(like_params)
     @like.user_id = current_user.id
@@ -14,7 +13,6 @@ class LikesController < ApplicationController
     end
   end
     
-    
   def destroy
     @like = Like.find(params[:id])
     @like.destroy
@@ -22,8 +20,6 @@ class LikesController < ApplicationController
     flash[:notice] ="Successfully Unliked!"
     redirect_to current_user  
   end
-    
-    
     
   private
     

@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :require_user, only: [:create, :update, :destroy]
   #before_action :edit_profile, only: [:create, :update, :destroy]
   
- 
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id

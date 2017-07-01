@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-before_filter :require_user, only: [:index, :show, :edit, :update]
-before_filter :edit_profile, only: [:edit, :update]
-
+  before_filter :require_user, only: [:index, :show, :edit, :update]
+  before_filter :edit_profile, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -23,7 +22,6 @@ before_filter :edit_profile, only: [:edit, :update]
       render 'welcome/index'
     end
   end
-  
   
   def show
     @profile = User.find(params[:id])

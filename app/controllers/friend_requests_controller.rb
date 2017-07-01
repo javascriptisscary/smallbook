@@ -12,7 +12,6 @@ class FriendRequestsController < ApplicationController
     end
   end
   
-  
   def update
     
   end
